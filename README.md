@@ -30,6 +30,28 @@ For multimodal models, I choose MiniCPM-V-2.6 for test. You can download the GGU
 - [MiniCPM-v-2.6 ggml-model-fp16.gguf](https://huggingface.co/EricZhang1412/MiniCPM-V-2.6/blob/main/ggml-model-f16.gguf)
 - [MiniCPM-v-2.6 ggml-model-Q4_K_M.gguf](https://huggingface.co/EricZhang1412/MiniCPM-V-2.6/blob/main/ggml-model-Q4_K_M.gguf)
 - [mmproj model (fp16)](https://huggingface.co/EricZhang1412/MiniCPM-V-2.6/blob/main/mmproj-model-f16.gguf)
+  
+Once you have the model files, you may transfer them to your Android device and replace with your own file paths in your Android device in the `scripts/build-run-android.sh`
+
+
+[#L17 for GGUF MODEL](https://github.com/EricZhang1412/llama-on-hexagon/blob/fd720dd3f6c301cad391b5cb98b7907f1f398381/scripts/build-run-android.sh#L17)
+``` shell
+# GGUF_MODEL_NAME=/storage/emulated/0/Documents/projects/models/MiniCPM-V-2_6/ggml-model-Q4_K_M.gguf
+GGUF_MODEL_NAME=${your_model_path}
+```
+
+[#L60 for input image](https://github.com/EricZhang1412/llama-on-hexagon/blob/fd720dd3f6c301cad391b5cb98b7907f1f398381/scripts/build-run-android.sh#L60)
+``` shell
+# IMG_PATH=/storage/emulated/0/Documents/projects/image_kamisato_ayaka.jpg
+IMG_PATH=${your_image_path}
+```
+
+[#L61 for MMProj Model for image encoding](https://github.com/EricZhang1412/llama-on-hexagon/blob/fd720dd3f6c301cad391b5cb98b7907f1f398381/scripts/build-run-android.sh#L61)
+``` shell
+# MMPROJ_MODEL_PATH=/storage/emulated/0/Documents/projects/models/MiniCPM-V-2_6/mmproj-model-f16.gguf
+MMPROJ_MODEL_PATH=${your_mmproj_model_path}
+```
+
 ### Recommend: ADB for debugging
 you will need an Android smartphone with adb-connected running on one of below Qualcomm SoCs:
 
