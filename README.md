@@ -24,6 +24,12 @@ Usage:
   ./scripts/build-run-android.sh run_llamacli
   ./scripts/build-run-android.sh run_llamabench 
 ```
+
+### Models UUT
+For multimodal models, I choose MiniCPM-V-2.6 for test. You can download the GGUF format models from the following links:
+- [MiniCPM-v-2.6 ggml-model-fp16.gguf](https://huggingface.co/EricZhang1412/MiniCPM-V-2.6/blob/main/ggml-model-f16.gguf)
+- [MiniCPM-v-2.6 ggml-model-Q4_K_M.gguf](https://huggingface.co/EricZhang1412/MiniCPM-V-2.6/blob/main/ggml-model-Q4_K_M.gguf)
+- [mmproj model (fp16)](https://huggingface.co/EricZhang1412/MiniCPM-V-2.6/blob/main/mmproj-model-f16.gguf)
 ### Recommend: ADB for debugging
 you will need an Android smartphone with adb-connected running on one of below Qualcomm SoCs:
 
