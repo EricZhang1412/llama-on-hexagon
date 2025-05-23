@@ -1,4 +1,47 @@
-# llama.cpp
+
+# Quick start
+## Reference
+Here are the guidance of using the repository, written by [@zhouwg](https://github.com/zhouwg): [about ggml-hexagon #18](https://github.com/zhouwg/ggml-hexagon/discussions/18). I just copy some essential parts here.
+### Environment
+WSL2 (Debian 12)
+
+### Pre-requisites
+utilize build-run-android.sh to download **Android NDK** and **Qualcomm QNN SDK** automatically, ***Qualcomm Hexagon SDK*** must be obtained with a Qualcomm Developer Account and cannot be downloaded automatically in this script. 
+
+``` bash
+  git clone https://github.com/EricZhang1412/llama-on-hexagon.git
+  cd {${llama-on-hexagon}}
+  git checkout pr_to_upstream
+
+ ./scripts/build-run-android.sh 
+Usage:
+  ./scripts/build-run-android.sh help
+  ./scripts/build-run-android.sh print_oplist
+  ./scripts/build-run-android.sh build
+  ./scripts/build-run-android.sh updateqnnlib
+  ./scripts/build-run-android.sh run_testops
+  ./scripts/build-run-android.sh run_testop          [ADD/MUL_MAT] 
+  ./scripts/build-run-android.sh run_llamacli
+  ./scripts/build-run-android.sh run_llamabench 
+```
+### Recommend: ADB for debugging
+you will need an Android smartphone with adb-connected running on one of below Qualcomm SoCs:
+
+- SM8450 (Snapdragon 8 Gen 1+)
+- SM8550 (Snapdragon 8 Gen 2)
+- SM8650 (Snapdragon 8 Gen 3)
+- SM8750-AB (Snapdragon 8 Elite)(aka Snapdragon 8 Gen 4)
+
+Here is a smart approach for using adb on WSL2 by [Ryan ZHENG](https://blog.csdn.net/u014175785): [ADB for WSL2](https://blog.csdn.net/u014175785/article/details/113438143)
+
+# Logs for reference
+You can check the logs of the build process in [this discussion](https://github.com/zhouwg/ggml-hexagon/discussions/37). 
+
+# Acknowledgements
+Thanks to [@zhouwg](https://github.com/zhouwg) for his great work on this project.
+
+# [Original README from LLaMA.cpp]
+## llama.cpp
 
 ![llama](https://user-images.githubusercontent.com/1991296/230134379-7181e485-c521-4d23-a0d6-f7b3b61ba524.png)
 
